@@ -6,11 +6,11 @@
       <mat-form-field class="example-full-width">
         <mat-label>Название</mat-label>
         <label>
-          <input matInput placeholder="Название" value="Название">
+          <input matInput placeholder="Название" value="Название" [(ngModel)]="todoTitle" name="input">
         </label>
       </mat-form-field>
     </form>
-    <button mat-flat-button color="primary">Добавить</button>
+    <button mat-flat-button color="primary" (click)="addTodo()">Добавить</button>
     <button mat-flat-button color="accent">Загрузить</button>
   </div>
 
