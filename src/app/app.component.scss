@@ -1,0 +1,29 @@
+p {
+  font-size: 1.5rem;
+}
+
+
+input {
+  &.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+
+  &.ng-valid.ng-touched {
+    border: 1px solid green;
+  }
+}
+
+.completed{
+  text-decoration: line-through;
+  margin: 0 50px;
+}
+
+.card{
+  margin: 20px;
+}
+.mat-flat-button{
+  margin: 5px;
+}
+h1{
+  margin: 20px;
+}
