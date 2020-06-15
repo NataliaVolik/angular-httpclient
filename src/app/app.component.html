@@ -11,20 +11,27 @@
       </mat-form-field>
     </form>
     <button mat-flat-button color="primary" (click)="addTodo()">Добавить</button>
-    <button mat-flat-button color="accent">Загрузить</button>
+    <button mat-flat-button color="accent" (click)="fetchTodos()">Загрузить</button>
   </div>
 
   <hr>
 
-  <div class="card" *ngFor="let todo of todos">
-    <p>
-      <span [class.completed]="todo.completed">{{todo.title | titlecase}}</span>
-      <span>
+  <div *ngIf="!loading; else loadingBlock">
+    <div class="card" *ngFor="let todo of todos">
+      <p>
+        <span [class.completed]="todo.completed">{{todo.title | titlecase}}</span>
+        <span>
         <button mat-flat-button color="warn">Удалить</button>
         <button mat-flat-button color="primary" [disabled]="todo.completed">Завершить</button>
       </span>
-    </p>
+      </p>
+    </div>
   </div>
+
+  <ng-template #loadingBlock>
+    <p>Loading...</p>
+  </ng-template>
+
 </div>
 
 
