@@ -23,7 +23,8 @@
           <span [class.completed]="todo.completed">{{todo.title | titlecase}}</span>
           <span>
         <button mat-flat-button color="warn" (click)="removeTodo(todo.id)">Удалить</button>
-        <button mat-flat-button color="primary" [disabled]="todo.completed">Завершить</button>
+        <button mat-flat-button color="primary" [disabled]="todo.completed" (click)="completeTodo(todo.id)">Завершить
+        </button>
       </span>
         </p>
       </div>

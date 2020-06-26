@@ -18,14 +18,20 @@ export class TodosService {
 
   addTodo(todo: Todo): Observable<Todo>{
     return this.http.post<Todo>('https://jsonplaceholder.typicode.com/todos', todo)
-  }
+  };
 
-  fetchTodos(): Observable<Todo[]>{
+  fetchTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos/?_limit=2')
       .pipe(delay(500))
-  }
+  };
 
-  removeTodo(id: number): Observable<void>{
-    return this.http.delete<void>(`https://jsonplaceholder.typicode.com/todos/${id}`)
+  removeTodo(id: number): Observable<void> {
+    return this.http.delete<void>(`https://jsonplaceholder.typicode.com/todos/${id}`);
+  };
+
+  completeTodo(id: number): Observable<Todo> {
+    return this.http.put<Todo>(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+     completed: true
+    })
   }
 }
